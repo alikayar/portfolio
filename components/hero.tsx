@@ -23,9 +23,7 @@ export default function Hero() {
             Building Scalable Systems
           </h1>
           <p className="mx-auto mt-6 max-w-sm text-pretty text-base leading-7 text-muted-foreground md:mx-0">
-            I build reliable web applications, backend systems, and automation
-            that simplify complex workflows and solve real operational
-            problems.
+            I build reliable full-stack web applications, data pipelines, RAG systems, and automations that simplify complex workflows.
           </p>
 
           <ul
