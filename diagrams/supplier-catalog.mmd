@@ -34,7 +34,7 @@ flowchart TD
 
   subgraph processing[" "]
     direction RL
-    mapping["Mapping and Parsing"] --> workers["Continuous workers"]
+    mapping["Mapping and Parsing"] --> workers["Background workers"]
   end
 
   object --> mapping

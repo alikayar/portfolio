@@ -1,8 +1,4 @@
-import {
-  IBM_Plex_Mono,
-  IBM_Plex_Sans,
-  IBM_Plex_Serif,
-} from "next/font/google";
+import { IBM_Plex_Mono, IBM_Plex_Sans, IBM_Plex_Serif } from "next/font/google";
 import Header from "@/components/header";
 import "./globals.css";
 
@@ -26,10 +22,7 @@ const plexMono = IBM_Plex_Mono({
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      className={`${plexSans.variable} ${plexSerif.variable} ${plexMono.variable}`}
-      lang="en"
-    >
+    <html className={`${plexSans.variable} ${plexSerif.variable} ${plexMono.variable}`} lang="en">
       <body>
         <Header />
         {children}

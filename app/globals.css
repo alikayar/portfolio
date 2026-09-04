@@ -12,7 +12,7 @@
   --secondary: oklch(0.869 0.022 252.894);
   --secondary-foreground: oklch(0.372 0.044 257.287);
   --muted: oklch(0.923 0.003 48.717);
-  --muted-foreground: oklch(0.553 0.013 58.071);
+  --muted-foreground: oklch(0.5 0.013 58.071);
   --border: oklch(0.869 0.005 56.366);
   --ring: oklch(0.554 0.046 257.417);
   --radius: 0.5rem;

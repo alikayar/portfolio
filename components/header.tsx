@@ -36,11 +36,7 @@ export default function Header() {
             aria-label="Main navigation"
           >
             {navigation.map((item) => (
-              <Link
-                className={navigationLinkClassName}
-                key={item.href}
-                href={item.href}
-              >
+              <Link className={navigationLinkClassName} key={item.href} href={item.href}>
                 {item.label}
               </Link>
             ))}
