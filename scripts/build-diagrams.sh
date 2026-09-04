@@ -23,5 +23,6 @@ for input in "${inputs[@]}"; do
     -w /data \
     "$image" \
     -i "diagrams/$name.mmd" \
-    -o "public/diagrams/$name.svg"
+    -o "public/diagrams/$name.svg" \
+    -b transparent
 done

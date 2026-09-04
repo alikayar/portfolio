@@ -3,6 +3,7 @@
   "look": "neo",
   "theme": "base",
   "themeVariables": {
+    "background": "#f8f7f3",
     "fontFamily": "IBM Plex Sans",
     "fontSize": "13px",
     "lineColor": "#7894ad",
@@ -20,6 +21,7 @@
     "nodeSpacing": 40,
     "rankSpacing": 60,
     "padding": 15,
+    "diagramPadding": 10,
     "subGraphTitleMargin": {
       "top": 10,
       "bottom": 4
@@ -27,10 +29,10 @@
   }
 }}%%
 flowchart TD
-  classDef process fill:#f8f7f3,stroke:#b8c2cc,stroke-width:1px
-  classDef inputOutput fill:#dce8f2,stroke:#5f86a5,stroke-width:1px
-  classDef storage fill:#eef3f7,stroke:#7894ad,stroke-width:1px
-  classDef finish fill:#e8f0eb,stroke:#789487,stroke-width:1px
+  classDef process fill:#f8f7f3,stroke:#b8c2cc,stroke-width:2px
+  classDef inputOutput fill:#dce8f2,stroke:#5f86a5,stroke-width:2px
+  classDef storage fill:#eef3f7,stroke:#7894ad,stroke-width:2px
+  classDef finish fill:#e8f0eb,stroke:#789487,stroke-width:2px
 
   subgraph knowledgeLayer["KNOWLEDGE LAYER"]
     direction TB
