@@ -1,12 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import { Fragment } from "react";
 
 const navigation = [
   { label: "Systems", href: "#systems" },
   { label: "Websites", href: "#websites" },
-  { label: "Blog", href: "#blog" },
   { label: "Contact", href: "#contact" },
+  { label: "Blog", href: "#blog", separatorBefore: true },
 ];
 
 const navigationLinkClassName = [
@@ -45,9 +46,14 @@ export default function Header() {
             aria-label="Main navigation"
           >
             {navigation.map((item) => (
-              <Link className={navigationLinkClassName} key={item.href} href={item.href}>
-                {item.label}
-              </Link>
+              <Fragment key={item.href}>
+                {item.separatorBefore ? (
+                  <span aria-hidden="true" className="h-5 w-px bg-secondary-foreground/40" />
+                ) : null}
+                <Link className={navigationLinkClassName} href={item.href}>
+                  {item.label}
+                </Link>
+              </Fragment>
             ))}
           </nav>
         </div>
