@@ -13,7 +13,7 @@ export default function SupplierCatalog() {
     <section className="bg-card pb-12 pt-20 text-foreground md:pb-16 md:pt-24" id="systems">
       <header className="mx-auto max-w-xl text-center">
         <h2 className="font-display text-4xl font-semibold tracking-[-0.035em] text-secondary-foreground sm:text-5xl">
-          Systems I&apos;ve built
+          Systems I&apos;ve Built
         </h2>
       </header>
 
@@ -34,10 +34,10 @@ export default function SupplierCatalog() {
           }
           impactItems={[
             { value: "10×", label: "Higher processing throughput" },
-            { value: "Always-on", label: "Continuous production workflow" },
+            { value: "24/7", label: "Continuous production workflow" },
             {
               value: "Deterministic",
-              label: "Reduced manual intervention and deterministic processing",
+              label: "Consistent processing with less manual intervention",
             },
           ]}
           problem={[

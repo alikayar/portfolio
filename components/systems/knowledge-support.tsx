@@ -37,7 +37,7 @@ export default function KnowledgeSupport() {
         },
         {
           value: "Lower Load",
-          label: "Fewer routine questions handled by support agents",
+          label: "Reduced routine support workload",
         },
       ]}
       problem={[
