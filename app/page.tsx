@@ -1,6 +1,7 @@
 import Hero from "@/components/hero";
 import KnowledgeSupport from "@/components/systems/knowledge-support";
 import SupplierCatalog from "@/components/systems/supplier-catalog";
+import Websites from "@/components/websites/websites";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
         <Hero />
         <SupplierCatalog />
         <KnowledgeSupport />
+        <Websites />
       </div>
     </div>
   );
