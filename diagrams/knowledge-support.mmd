@@ -1,0 +1,77 @@
+%%{init: {
+  "htmlLabels": false,
+  "look": "neo",
+  "theme": "base",
+  "themeVariables": {
+    "fontFamily": "IBM Plex Sans",
+    "fontSize": "13px",
+    "lineColor": "#7894ad",
+    "primaryBorderColor": "#b8c2cc",
+    "primaryColor": "#f8f7f3",
+    "primaryTextColor": "#334155",
+    "clusterBkg": "#fbfcfd",
+    "clusterBorder": "#c5d3df",
+    "titleColor": "#334155",
+    "tertiaryColor": "#eef3f7",
+    "tertiaryBorderColor": "#c5d3df"
+  },
+  "flowchart": {
+    "curve": "linear",
+    "nodeSpacing": 40,
+    "rankSpacing": 60,
+    "padding": 15,
+    "subGraphTitleMargin": {
+      "top": 10,
+      "bottom": 4
+    }
+  }
+}}%%
+flowchart TD
+  classDef process fill:#f8f7f3,stroke:#b8c2cc,stroke-width:1px
+  classDef inputOutput fill:#dce8f2,stroke:#5f86a5,stroke-width:1px
+  classDef storage fill:#eef3f7,stroke:#7894ad,stroke-width:1px
+  classDef finish fill:#e8f0eb,stroke:#789487,stroke-width:1px
+
+  subgraph knowledgeLayer["KNOWLEDGE LAYER"]
+    direction TB
+    subgraph contents[" "]
+      direction LR
+      sources[/Public content/]
+      collect["Scrape and normalize"]
+
+      sources --> collect
+    end
+
+    subgraph embedding[" "]
+      direction LR
+      index["Chunk and index"]
+      vector[("Embed vectors")]
+
+      index --> vector
+    end
+
+    collect --> index
+  end
+
+  subgraph supportLayer["SUPPORT LAYER"]
+    direction TD
+    newQuestion[/New question/]
+    memory[("Conversation memory")]
+    retrieval["RAG retrieval"]
+    context["Context assembly"]
+    assistant["Grounded assistant"]
+
+    newQuestion --> memory
+    newQuestion --> retrieval
+    memory --> context
+    retrieval --> context
+    context --> assistant
+  end
+
+  knowledgeLayer --> supportLayer
+
+
+class collect,index,retrieval,context process
+class sources,newQuestion inputOutput
+class memory,vector storage
+class assistant finish
