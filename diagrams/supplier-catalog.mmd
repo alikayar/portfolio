@@ -1,5 +1,6 @@
 %%{init: {
   "htmlLabels": false,
+  "look": "neo",
   "theme": "base",
   "themeVariables": {
     "fontFamily": "IBM Plex Sans",
@@ -9,7 +10,8 @@
     "primaryColor": "#f8f7f3",
     "primaryTextColor": "#334155",
     "clusterBkg": "#fbfcfd",
-    "clusterBorder": "#eef2f5",
+    "clusterBorder": "#c5d3df",
+    "titleColor": "#334155",
     "tertiaryColor": "#eef3f7",
     "tertiaryBorderColor": "#c5d3df"
   },
@@ -17,47 +19,74 @@
     "curve": "linear",
     "nodeSpacing": 40,
     "rankSpacing": 60,
-    "padding": 15
+    "padding": 15,
+    "subGraphTitleMargin": {
+      "top": 10,
+      "bottom": 4
+    }
   }
 }}%%
 flowchart TD
-  classDef worker fill:#dce8f2,stroke:#5f86a5,stroke-width:1.5px
-  classDef storage fill:#f3f5f6
-  classDef external stroke:#7894ad,stroke-dasharray:4 3
-  classDef output fill:#e8f0f5,stroke:#7894ad
-  classDef error fill:#fbf3f1,stroke:#c89b92,stroke-dasharray:4 3
+  classDef process fill:#f8f7f3,stroke:#b8c2cc,stroke-width:2px
+  classDef inputOutput fill:#dce8f2,stroke:#5f86a5,stroke-width:2px
+  classDef storage fill:#eef3f7,stroke:#7894ad,stroke-width:2px
+  classDef finish fill:#e8f0eb,stroke:#789487,stroke-width:2px
+  classDef external fill:#eef3f7,stroke:#7894ad,stroke-width:2px,stroke-dasharray:4 3
+  classDef error fill:#f3e9e7,stroke:#a47d77,stroke-width:2px,stroke-dasharray:4 3
 
   subgraph intake[" "]
     direction LR
-    supplier["Supplier files"] --> object[("Object storage")]
+    supplier[/Supplier files/]
+    object[("Object storage")]
+
+    supplier --> object
   end
 
   subgraph processing[" "]
-    direction RL
-    mapping["Mapping and Parsing"] --> workers["Background workers"]
+    direction LR
+    mapping["Mapping and Parsing"]
+    workers["Background workers"]
+
+    mapping --> workers
   end
 
   object --> mapping
 
   subgraph enrichment[" "]
     direction LR
-    services["External data services"] --> calculations["Process and Calculations"]
+    services[/External data services/]
+    calculations["Process and Calculations"]
+
+    services --> calculations
   end
 
   workers --> services
-  calculations --> dataset[("Product dataset")]
-  dataset --> dashboard["Operational dashboard"]
 
-  services -.-> retry["Retry / backoff"]
-  retry -.-> calculations
-  services -.-> failed["Error state"]
+  subgraph output[" "]
+    direction TB
+    dataset[("Product dataset")]
+    dashboard[/Operational dashboard/]
 
-  class workers worker
+    calculations --> dataset
+    dataset --> dashboard
+  end
+
+  subgraph recovery[" "]
+    direction TB
+    retry["Retry / backoff"]
+    failed["Error state"]
+
+    services -.-> retry
+    retry -.-> calculations
+    services -.-> failed
+  end
+
+  class mapping,workers,calculations,retry process
+  class supplier inputOutput
   class object,dataset storage
   class services external
-  class dashboard output
-  class retry,failed error
+  class dashboard finish
+  class failed error
 
   linkStyle 0,1,2,3,4,5,6 stroke:#7894ad,stroke-width:1.5px
-  linkStyle 7,8 stroke:#7894ad,stroke-width:1px,stroke-dasharray:5 3
-  linkStyle 9 stroke:#c89b92,stroke-width:1px,stroke-dasharray:5 3
+  linkStyle 7,8,9 stroke:#a47d77,stroke-width:1px,stroke-dasharray:5 3
