@@ -50,6 +50,26 @@
   html {
     height: 100%;
     color-scheme: light;
+    scrollbar-color: var(--secondary-foreground) var(--background);
+    scrollbar-width: thin;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0.75rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--background);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--secondary-foreground);
+    border: 0.25rem solid var(--background);
+    border-radius: 999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--ring);
   }
 
   html,
