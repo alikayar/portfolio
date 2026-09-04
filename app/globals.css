@@ -50,8 +50,15 @@
   html {
     height: 100%;
     color-scheme: light;
+    scroll-behavior: smooth;
     scrollbar-color: var(--secondary-foreground) var(--background);
     scrollbar-width: thin;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 
   ::-webkit-scrollbar {
