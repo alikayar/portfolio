@@ -31,7 +31,7 @@ const projects: WebsiteProject[] = [
 export default function Websites() {
   return (
     <section
-      className="scroll-mt-[4.5rem] bg-card pb-16 pt-20 text-foreground md:pb-24 md:pt-24"
+      className="scroll-mt-[3.25rem] bg-card pb-16 pt-20 text-foreground md:pb-24 md:pt-24"
       id="websites"
     >
       <header className="mx-auto max-w-xl text-center">

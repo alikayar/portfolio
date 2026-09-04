@@ -13,7 +13,7 @@ const coreStack = [
 
 export default function Hero() {
   return (
-    <section className="grid min-h-[calc(100svh-4.5rem)] content-center items-start gap-8 overflow-hidden bg-background text-foreground pt-12 md:grid-cols-2 md:gap-12 md:pt-0">
+    <section className="grid min-h-[calc(100svh-3.25rem)] content-center items-start gap-8 overflow-hidden bg-background text-foreground pt-12 md:grid-cols-2 md:gap-12 md:pt-0">
       <header className="mx-auto w-full max-w-lg text-center md:mx-0 md:text-left">
         <p className="mb-5 font-mono text-xs font-semibold uppercase tracking-[0.1em] text-muted-foreground">
           Independent Product Engineer

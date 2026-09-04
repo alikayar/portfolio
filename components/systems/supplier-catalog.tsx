@@ -11,7 +11,7 @@ const stack = [
 export default function SupplierCatalog() {
   return (
     <section
-      className="scroll-mt-[4.5rem] bg-card pb-12 pt-20 text-foreground md:pb-16 md:pt-24"
+      className="scroll-mt-[3.25rem] bg-card pb-12 pt-20 text-foreground md:pb-16 md:pt-24"
       id="systems"
     >
       <header className="mx-auto max-w-xl text-center">
