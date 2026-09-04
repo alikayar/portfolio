@@ -2,9 +2,12 @@ import Image from "next/image";
 import SystemSection from "@/components/systems/system-section";
 
 const stack = [
+  { icon: "/icons/openai.svg", label: "OpenAI" },
+  { icon: "/icons/redis.svg", label: "Redis" },
+  { icon: "/icons/postgresql.svg", label: "pgvector" },
   { icon: "/icons/typescript.svg", label: "TypeScript" },
   { icon: "/icons/nodedotjs.svg", label: "Node.js" },
-  { icon: "/icons/postgresql.svg", label: "PostgreSQL" },
+  { icon: "/icons/websocket.svg", label: "WebSocket" },
 ];
 
 export default function KnowledgeSupport() {
