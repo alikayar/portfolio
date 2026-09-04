@@ -19,7 +19,7 @@ export default function KnowledgeSupport() {
           <Image
             alt=""
             aria-hidden
-            className="object-contain object-right"
+            className="object-contain object-center lg:object-right"
             fill
             src="/diagrams/knowledge-support.svg"
             sizes="(min-width: 1024px) 65vw, 100vw"

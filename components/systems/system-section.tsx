@@ -19,7 +19,7 @@ export default function SystemSection({
 }: SystemSectionProps) {
   return (
     <article className="bg-background py-5 sm:py-6">
-      <div className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-10">
+      <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-start lg:gap-10">
         <div>
           <h3 className="font-display text-2xl font-semibold tracking-[-0.025em] text-secondary-foreground sm:text-3xl">
             {title}
@@ -64,7 +64,7 @@ export default function SystemSection({
           </div>
         </div>
 
-        <div className="min-w-0">{diagram}</div>
+        <div className="min-w-0 w-full">{diagram}</div>
       </div>
     </article>
   );
@@ -74,7 +74,7 @@ function TextList({ title, items }: { title: string; items: string[] }) {
   return (
     <div>
       <p className="text-sm font-medium text-secondary-foreground">{title}</p>
-      <ul className="mt-3 max-w-lg list-disc space-y-2 pl-5 text-[15px] leading-7 text-foreground/70">
+      <ul className="mt-3 w-full list-disc space-y-2 pl-5 text-[15px] leading-7 text-foreground/70">
         {items.map((item) => (
           <li key={item}>{item}</li>
         ))}
