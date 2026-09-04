@@ -1,3 +1,4 @@
+import Contact from "@/components/contact";
 import Hero from "@/components/hero";
 import KnowledgeSupport from "@/components/systems/knowledge-support";
 import SupplierCatalog from "@/components/systems/supplier-catalog";
@@ -11,6 +12,7 @@ export default function Home() {
         <SupplierCatalog />
         <KnowledgeSupport />
         <Websites />
+        <Contact />
       </div>
     </div>
   );
