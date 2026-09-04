@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "diagrams:build": "bash scripts/build-diagrams.sh",
     "start": "next start",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
