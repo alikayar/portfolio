@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { siteConfig } from "@/config/site";
 
 const coreStack = [
   { icon: "/icons/typescript.svg", label: "TypeScript" },
@@ -16,14 +17,16 @@ export default function Hero() {
     <section className="grid min-h-[calc(100svh-3.25rem)] content-center items-start gap-8 overflow-hidden bg-background text-foreground pt-12 md:grid-cols-2 md:gap-12 md:pt-0">
       <header className="mx-auto w-full max-w-lg text-center md:mx-0 md:text-left">
         <p className="mb-5 font-mono text-xs font-semibold uppercase tracking-[0.1em] text-muted-foreground">
-          Independent Product Engineer
+          {siteConfig.role}
         </p>
         <h1 className="whitespace-nowrap font-display text-[clamp(1.65rem,3vw,2.75rem)] font-semibold leading-none tracking-[-0.04em] text-secondary-foreground">
-          Building Scalable Systems
+          Building Reliable Software Systems
         </h1>
         <p className="mx-auto mt-6 max-w-sm text-pretty text-base leading-7 text-muted-foreground md:mx-0">
-          I build reliable full-stack web applications, data pipelines, RAG systems, and automations
-          that simplify complex workflows.
+          I build reliable software systems that simplify complex workflows and operations.
+        </p>
+        <p className="mt-4 text-sm font-medium text-secondary-foreground">
+          Available for international contract work.
         </p>
 
         <ul
@@ -48,7 +51,7 @@ export default function Hero() {
 
       <div className="flex items-center justify-center md:justify-end">
         <Image
-          alt="Ali Kayar"
+          alt={siteConfig.name}
           className="aspect-[1238/1096] w-full max-w-lg rounded-3xl object-cover"
           height={1096}
           priority

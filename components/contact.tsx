@@ -1,4 +1,7 @@
 import Image from "next/image";
+import { siteConfig } from "@/config/site";
+
+const email = "hello@example.com";
 
 const projectFit = [
   "Full-stack web applications",
@@ -29,7 +32,7 @@ export default function Contact() {
       <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-16">
         <figure className="relative mx-auto aspect-[3/2] w-full overflow-hidden rounded-3xl border border-border/70 bg-secondary lg:order-2 lg:mx-0">
           <Image
-            alt="Ali Kayar overlooking a coastal town"
+            alt={`${siteConfig.name} overlooking a coastal town`}
             className="object-cover"
             fill
             quality={85}
@@ -67,10 +70,10 @@ export default function Contact() {
             <div className="mt-3 flex flex-wrap items-center gap-x-8 gap-y-4">
               <a
                 className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground outline-none transition-colors hover:text-foreground focus-visible:text-foreground"
-                href="mailto:hello@example.com"
+                href={`mailto:${email}`}
               >
                 <BrandMark src="/icons/mail.svg" />
-                hello@example.com
+                {email}
               </a>
 
               <span aria-hidden="true" className="hidden h-5 w-px bg-border sm:block" />
@@ -78,7 +81,7 @@ export default function Contact() {
               <div className="flex items-center gap-x-7 gap-y-4 text-sm font-medium">
                 <a
                   className="inline-flex items-center gap-2 text-muted-foreground outline-none transition-colors hover:text-foreground focus-visible:text-foreground"
-                  href="https://www.linkedin.com/in/ali-kayar-b59420224/"
+                  href={siteConfig.socials.linkedin}
                   rel="me noreferrer"
                   target="_blank"
                 >
@@ -87,7 +90,7 @@ export default function Contact() {
                 </a>
                 <a
                   className="inline-flex items-center gap-2 text-muted-foreground outline-none transition-colors hover:text-foreground focus-visible:text-foreground"
-                  href="https://github.com/alikayar"
+                  href={siteConfig.socials.github}
                   rel="me noreferrer"
                   target="_blank"
                 >

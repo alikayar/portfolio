@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Fragment } from "react";
+import { siteConfig } from "@/config/site";
 
 const navigation = [
   { label: "Systems", href: "#systems" },
@@ -33,7 +34,7 @@ export default function Header() {
               window.history.replaceState(null, "", "/");
               window.scrollTo({ top: 0 });
             }}
-            aria-label="Ali Kayar home"
+            aria-label={`${siteConfig.name} home`}
           >
             <span className="inline-flex items-baseline font-display text-[clamp(1rem,calc(0.911rem_+_0.446vw),1.125rem)] leading-none text-secondary-foreground">
               <span className="font-semibold">Ali</span>
