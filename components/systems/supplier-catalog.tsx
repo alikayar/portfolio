@@ -10,51 +10,38 @@ const stack = [
 
 export default function SupplierCatalog() {
   return (
-    <section
-      className="scroll-mt-[3.25rem] bg-card pb-12 pt-20 text-foreground md:pb-16 md:pt-24"
-      id="systems"
-    >
-      <header className="mx-auto max-w-xl text-center">
-        <h2 className="font-display text-4xl font-semibold tracking-[-0.035em] text-secondary-foreground sm:text-5xl">
-          Systems I&apos;ve Built
-        </h2>
-      </header>
-
-      <div className="mt-12">
-        <SystemSection
-          diagram={
-            <figure className="relative h-[400px] w-full overflow-hidden bg-transparent sm:h-[500px] lg:h-[680px]">
-              <figcaption className="sr-only">Supplier catalog system flow</figcaption>
-              <Image
-                alt=""
-                aria-hidden
-                className="object-contain object-center lg:object-right"
-                fill
-                src="/diagrams/supplier-catalog.svg"
-                sizes="(min-width: 1024px) 65vw, 100vw"
-              />
-            </figure>
-          }
-          impactItems={[
-            { value: "10×", label: "Higher processing throughput" },
-            { value: "24/7", label: "Continuous production workflow" },
-            {
-              value: "Deterministic",
-              label: "Consistent processing with less manual intervention",
-            },
-          ]}
-          problem={[
-            "Supplier analysis relied on repetitive processing of large CSV and Excel files across multiple data providers.",
-            "Processing was slow, error-prone, and could not run continuously.",
-          ]}
-          solution={[
-            "Built a full-stack application that standardized file ingestion, mapping, and processing.",
-            "Background workers handled file parsing, external API requests, automated calculations, and document generation.",
-          ]}
-          stack={stack}
-          title="Supplier Catalog Automation"
-        />
-      </div>
-    </section>
+    <SystemSection
+      diagram={
+        <figure className="relative h-[400px] w-full overflow-hidden bg-transparent sm:h-[500px] lg:h-[680px]">
+          <figcaption className="sr-only">Supplier catalog system flow</figcaption>
+          <Image
+            alt=""
+            aria-hidden
+            className="object-contain object-center lg:object-right"
+            fill
+            src="/diagrams/supplier-catalog.svg"
+            sizes="(min-width: 1024px) 65vw, 100vw"
+          />
+        </figure>
+      }
+      impactItems={[
+        { value: "10×", label: "Higher processing throughput" },
+        { value: "24/7", label: "Continuous production workflow" },
+        {
+          value: "Deterministic",
+          label: "Consistent processing with less manual intervention",
+        },
+      ]}
+      problem={[
+        "Supplier analysis relied on repetitive processing of large CSV and Excel files across multiple data providers.",
+        "Processing was slow, error-prone, and could not run continuously.",
+      ]}
+      solution={[
+        "Built a full-stack application for data extraction, file ingestion, mapping, and processing.",
+        "Background workers handled file parsing, external API requests, automated calculations, and document generation.",
+      ]}
+      stack={stack}
+      title="Supplier Catalog Automation"
+    />
   );
 }

@@ -51,7 +51,7 @@ export default function KnowledgeSupport() {
         "Automated first-line support while keeping human escalation available when needed.",
       ]}
       stack={stack}
-      title="Knowledge Support Automation"
+      title="Knowledge Support System"
     />
   );
 }

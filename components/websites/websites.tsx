@@ -36,7 +36,7 @@ export default function Websites() {
     >
       <header className="mx-auto max-w-xl text-center">
         <h2 className="font-display text-3xl font-semibold tracking-[-0.035em] text-secondary-foreground sm:text-4xl">
-          Client Websites
+          Websites
         </h2>
       </header>
 
