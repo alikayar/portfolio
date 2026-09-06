@@ -2,10 +2,6 @@
 .github
 .next
 node_modules
-.env
-.env.*
-!.env.example
-*.log
+npm-debug.log*
+.env*
 coverage
-dist
-tmp
