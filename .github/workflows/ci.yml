@@ -10,6 +10,8 @@ permissions:
   contents: read
 
 env:
+  ASSETS_URL: ${{ vars.ASSETS_URL }}
+  CONTACT_EMAIL: ${{ vars.CONTACT_EMAIL }}
   IMAGE_NAME: ghcr.io/${{ github.repository }}
 
 concurrency:
@@ -74,6 +76,8 @@ jobs:
           image="${IMAGE_NAME,,}:$GITHUB_SHA"
 
           docker build \
+            --build-arg ASSETS_URL \
+            --build-arg CONTACT_EMAIL \
             --file Dockerfile \
             --tag "$image" \
             .

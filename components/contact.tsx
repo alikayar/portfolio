@@ -1,7 +1,6 @@
 import Image from "next/image";
+import { assetUrl, contactEmail } from "@/config/environment";
 import { siteConfig } from "@/config/site";
-
-const email = "hello@example.com";
 
 const projectFit = [
   "Full-stack web applications",
@@ -37,7 +36,7 @@ export default function Contact() {
             fill
             quality={85}
             sizes="(min-width: 1024px) 46vw, 100vw"
-            src="/images/profile-contact.webp"
+            src={assetUrl("/images/profile-contact.webp")}
           />
         </figure>
 
@@ -70,10 +69,10 @@ export default function Contact() {
             <div className="mt-3 flex flex-wrap items-center gap-x-8 gap-y-4">
               <a
                 className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground outline-none transition-colors hover:text-foreground focus-visible:text-foreground"
-                href={`mailto:${email}`}
+                href={`mailto:${contactEmail}`}
               >
                 <BrandMark src="/icons/mail.svg" />
-                {email}
+                {contactEmail}
               </a>
 
               <span aria-hidden="true" className="hidden h-5 w-px bg-border sm:block" />

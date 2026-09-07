@@ -13,13 +13,13 @@ export const siteConfig = {
 } as const;
 
 export const socialPreview = {
-  path: "/images/og-default.jpg",
+  assetPath: "/images/og-default.jpg",
   width: 1200,
   height: 630,
   alt: `${siteConfig.name} — ${siteConfig.role}`,
 } as const;
 
-export const getOpenGraphMetadata = (url?: string) => ({
+export const getOpenGraphMetadata = (imageUrl: string, url?: string) => ({
   type: "website" as const,
   locale: "en_US" as const,
   ...(url ? { url } : {}),
@@ -28,7 +28,7 @@ export const getOpenGraphMetadata = (url?: string) => ({
   description: siteConfig.openGraphDescription,
   images: [
     {
-      url: socialPreview.path,
+      url: imageUrl,
       width: socialPreview.width,
       height: socialPreview.height,
       alt: socialPreview.alt,

@@ -3,11 +3,23 @@
 Portfolio releases use semantic versions. `package.json`, `package-lock.json`,
 the Git tag, and the GHCR image tag must identify the same version.
 
+Each release tag points to a commit whose SHA-tagged container image was
+already produced by CI. The release workflow promotes that existing image
+without rebuilding it.
+
 Use `vX.Y.Z` for Git and GHCR tags. The package files omit the `v` prefix.
 
 ## Create a release
 
-Start from a clean, up-to-date `main` branch. Choose one of the following:
+After the development pull request is merged, start from a clean, up-to-date
+`main` branch:
+
+```bash
+git switch main
+git pull --ff-only
+```
+
+Choose one of the following:
 
 ```bash
 npm version patch -m "chore(release): %s"
@@ -21,23 +33,28 @@ To release a specific version instead:
 npm version 1.0.5 -m "chore(release): %s"
 ```
 
-`npm version` updates both package files, creates a release commit, and creates
-the corresponding `v1.0.5` Git tag locally.
+`npm version` updates `package.json` and `package-lock.json`, creates the release
+commit, and creates the corresponding `vX.Y.Z` Git tag locally.
 
-Push the release commit first:
+Record the version and push the release commit to `main` first:
 
 ```bash
+version="$(node -p 'require("./package.json").version')"
 git push origin main
 ```
 
-Wait for the `CI` workflow to publish the commit-SHA image. Then push the tag:
+Wait for the `CI` workflow to publish that commit's SHA image. Then push the tag
+separately:
 
 ```bash
-git push origin v1.0.5
+git push origin "v$version"
 ```
 
+Do not push `main` and its tag together with `--follow-tags`. The `Release`
+workflow must start only after the SHA image is available.
+
 The `Release` workflow verifies the package versions and promotes the existing
-SHA image to `ghcr.io/alikayar/portfolio:v1.0.5`. It does not rebuild the
+SHA image to `ghcr.io/<owner>/portfolio:v1.0.5`. It does not rebuild the
 application and refuses to overwrite an existing version image.
 
 ## Deploy or roll back

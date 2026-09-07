@@ -1,8 +1,11 @@
 import { IBM_Plex_Mono, IBM_Plex_Sans, IBM_Plex_Serif } from "next/font/google";
 import type { Metadata } from "next";
 import Header from "@/components/header";
+import { assetUrl } from "@/config/environment";
 import { getOpenGraphMetadata, siteConfig, socialPreview } from "@/config/site";
 import "./globals.css";
+
+const socialPreviewUrl = assetUrl(socialPreview.assetPath);
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -14,12 +17,12 @@ export const metadata: Metadata = {
   applicationName: siteConfig.name,
   authors: [{ name: siteConfig.name, url: siteConfig.url }],
   creator: siteConfig.name,
-  openGraph: getOpenGraphMetadata(),
+  openGraph: getOpenGraphMetadata(socialPreviewUrl),
   twitter: {
     card: "summary_large_image",
     title: `${siteConfig.name} — ${siteConfig.role}`,
     description: siteConfig.openGraphDescription,
-    images: [socialPreview.path],
+    images: [socialPreviewUrl],
   },
   robots: {
     index: true,
@@ -61,7 +64,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         "@id": `${siteConfig.url}/#person`,
         name: siteConfig.name,
         url: siteConfig.url,
-        image: `${siteConfig.url}/images/profile-hero.jpg`,
+        image: assetUrl("/images/profile-hero.webp"),
         jobTitle: siteConfig.role,
         sameAs: [siteConfig.socials.linkedin, siteConfig.socials.github],
         knowsAbout: [

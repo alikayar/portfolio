@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { assetUrl } from "@/config/environment";
 import { siteConfig } from "@/config/site";
 
 const coreStack = [
@@ -54,7 +55,7 @@ export default function Hero() {
           height={1096}
           priority
           sizes="(min-width: 768px) 48vw, 90vw"
-          src="/images/profile-hero.jpg"
+          src={assetUrl("/images/profile-hero.webp")}
           width={1238}
         />
       </div>

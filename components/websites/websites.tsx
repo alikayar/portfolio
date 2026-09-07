@@ -1,11 +1,12 @@
 import WebsiteSection, { type WebsiteProject } from "@/components/websites/website-section";
+import { assetUrl } from "@/config/environment";
 
 const projects: WebsiteProject[] = [
   {
     category: "Real estate website",
     description: "A multilingual website for a residential development in Podgorica, Montenegro.",
     href: "https://ckgroupinvestment.com/en",
-    image: "/images/public-work/ck-group-investment-website.webp",
+    image: assetUrl("/images/public-work/ck-group-investment-website.webp"),
     imageAlt: "CK Group Investment website homepage",
     stack: [
       { icon: "/icons/astro.svg", label: "Astro" },
@@ -17,7 +18,7 @@ const projects: WebsiteProject[] = [
     category: "Insurance website",
     description: "A multilingual insurance website for product discovery and quote capture.",
     href: "https://solarasigorta.com/en",
-    image: "/images/public-work/solara-insurance-website.webp",
+    image: assetUrl("/images/public-work/solara-insurance-website.webp"),
     imageAlt: "Solara Insurance website product page",
     stack: [
       { icon: "/icons/nextdotjs.svg", label: "Next.js" },
