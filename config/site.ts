@@ -1,11 +1,18 @@
 export const siteConfig = {
   name: "Ali Kayar",
-  role: "Independent Software Engineer & Consultant",
+  role: "Full-Stack Software Engineer",
   url: "https://alikayar.com",
+
   description:
-    "Independent software engineer and consultant building full-stack web applications, websites, data systems, workflow automation, and industrial software.",
+    "Full-stack software engineer building web applications, websites, data systems, workflow automation, and industrial software.",
+
   openGraphDescription:
     "Full-stack web applications, websites, data systems, workflow automation, and industrial software.",
+
+  location: "Türkiye",
+  locationFlag: "/icons/turkey.svg",
+  availability: "Available for international B2B contracts",
+
   socials: {
     linkedin: "https://www.linkedin.com/in/ali-kayar-b59420224/",
     github: "https://github.com/alikayar",

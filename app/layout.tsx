@@ -67,6 +67,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         image: assetUrl("/images/profile-hero.webp"),
         jobTitle: siteConfig.role,
         sameAs: [siteConfig.socials.linkedin, siteConfig.socials.github],
+        homeLocation: {
+          "@type": "Place",
+          name: siteConfig.location,
+        },
         knowsAbout: [
           "Full-stack web development",
           "Website development",

@@ -17,6 +17,9 @@ const navigationLinkClassName = [
   "focus-visible:text-foreground focus-visible:after:w-full",
 ].join(" ");
 
+const [firstName, ...lastNameParts] = siteConfig.name.split(" ");
+const lastName = lastNameParts.join(" ");
+
 export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-secondary/30 backdrop-blur-md">
@@ -35,8 +38,8 @@ export default function Header() {
             aria-label={`${siteConfig.name} home`}
           >
             <span className="inline-flex items-baseline font-display text-[clamp(1rem,calc(0.911rem_+_0.446vw),1.125rem)] leading-none text-secondary-foreground">
-              <span className="font-semibold">Ali</span>{" "}
-              <span className="ml-[0.12em] font-bold">Kayar</span>
+              <span className="font-semibold">{firstName}</span>{" "}
+              <span className="ml-[0.12em] font-bold">{lastName}</span>
             </span>
           </Link>
 

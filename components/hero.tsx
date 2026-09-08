@@ -18,15 +18,28 @@ export default function Hero() {
     <section className="grid min-h-[calc(100svh-3.25rem)] content-center items-start gap-8 overflow-hidden bg-background text-foreground pt-12 md:grid-cols-2 md:gap-12 md:pt-0">
       <header className="mx-auto w-full max-w-lg text-center md:mx-0 md:text-left">
         <h1 className="text-balance font-display text-[clamp(1.65rem,3vw,2.75rem)] font-semibold leading-none tracking-[-0.04em] text-secondary-foreground">
-          Full-Stack Software Engineer
+          {siteConfig.role}
         </h1>
         <p className="mx-auto mt-6 max-w-sm text-pretty text-base leading-7 text-muted-foreground md:mx-0">
           I build websites, full-stack applications, data systems, and automation for complex
           business workflows.
         </p>
-        <p className="mt-4 text-sm font-medium text-secondary-foreground">
-          Independent · International B2B Contracts
-        </p>
+        <div className="mt-4 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm font-medium text-secondary-foreground md:justify-start">
+          <span className="inline-flex items-center gap-2">
+            <Image
+              alt=""
+              aria-hidden="true"
+              className="h-3 w-[18px] rounded-[2px] object-cover"
+              height={20}
+              unoptimized
+              src={siteConfig.locationFlag}
+              width={30}
+            />
+            {siteConfig.location}
+          </span>
+          <span aria-hidden="true">·</span>
+          <span>{siteConfig.availability}</span>
+        </div>
 
         <ul
           aria-label="Core stack"
