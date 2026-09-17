@@ -14,7 +14,7 @@ export const siteConfig = {
   availability: "Available for international B2B contracts",
 
   socials: {
-    linkedin: "https://www.linkedin.com/in/ali-kayar-b59420224/",
+    linkedin: "https://www.linkedin.com/in/ali-kayar/",
     github: "https://github.com/alikayar",
   },
 } as const;
