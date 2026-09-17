@@ -1,3 +1,18 @@
+License scope
+
+The MIT License below applies to the application source code, configuration,
+build scripts, and technical documentation in this repository, except for
+the excluded materials described below.
+
+It does not apply to portfolio content, including biographical and project
+copy embedded in source files, case-study diagrams in diagrams/ and
+public/diagrams/, portfolio photographs and screenshots, or personal branding.
+
+Third-party assets and trademarks, including logos in public/icons/, are also
+excluded from the MIT License. These materials remain the property of their
+respective owners, and any applicable third-party licenses continue to govern
+their use.
+
 MIT License
 
 Copyright (c) 2026 Ali Kayar
