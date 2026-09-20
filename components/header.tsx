@@ -6,6 +6,7 @@ import { siteConfig } from "@/config/site";
 const navigation = [
   { label: "Work", href: "/#systems" },
   { label: "Websites", href: "/#websites" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/#contact" },
 ];
 
