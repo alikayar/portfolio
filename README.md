@@ -17,6 +17,7 @@ Built with Next.js 16, React 19, TypeScript, and Tailwind CSS 4.
 
 - **External assets:** portfolio images are served from a configurable HTTPS origin.
 - **Diagrams:** Mermaid sources are version-controlled and rendered to committed SVG assets.
+- **Status pages:** not-found and error illustrations are standalone Studio exports in `public/illustrations/`; edit their sources in Studio and copy the rendered SVGs here.
 - **Metadata & SEO:** Open Graph, JSON-LD structured data, sitemap, and robots metadata are included.
 - **Delivery:** CI validates the application and publishes container images tagged by commit SHA.
 

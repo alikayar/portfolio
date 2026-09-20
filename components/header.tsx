@@ -4,9 +4,9 @@ import Link from "next/link";
 import { siteConfig } from "@/config/site";
 
 const navigation = [
-  { label: "Work", href: "#systems" },
-  { label: "Websites", href: "#websites" },
-  { label: "Contact", href: "#contact" },
+  { label: "Work", href: "/#systems" },
+  { label: "Websites", href: "/#websites" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 const navigationLinkClassName = [
