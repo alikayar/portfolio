@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { MaskedIcon } from "@/components/ui/masked-icon";
 
 type SystemSectionProps = {
   title: string;
@@ -21,42 +22,32 @@ export default function SystemSection({
     <article className="bg-background py-5 sm:py-6">
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-start lg:gap-10">
         <div>
-          <h3 className="font-display text-2xl font-semibold tracking-[-0.025em] text-secondary-foreground sm:text-3xl">
-            {title}
-          </h3>
+          <h3>{title}</h3>
           <div className="mt-8 space-y-8">
             {problem?.length ? <TextList title="Problem" items={problem} /> : null}
             {solution?.length ? <TextList title="Solution" items={solution} /> : null}
           </div>
 
           <div className="mt-8">
-            <p className="text-sm font-medium text-secondary-foreground">Impact</p>
-            <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-foreground/70">
+            <h4>Impact</h4>
+            <ul className="mt-3 list-disc space-y-2 pl-5">
               {impactItems.map((item) => (
                 <li key={item.value}>
-                  <span className="font-semibold text-secondary-foreground">{item.value}</span> —{" "}
-                  {item.label}
+                  <span className="font-semibold">{item.value}</span> — {item.label}
                 </li>
               ))}
             </ul>
           </div>
 
           <div className="mt-8">
-            <p className="text-sm font-medium text-secondary-foreground">Tech Stack</p>
+            <h4>Tech Stack</h4>
             <ul
-              className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-xs leading-6"
+              className="tech-stack-text mt-3 flex flex-wrap gap-x-5 gap-y-2"
               aria-label="Technology stack"
             >
               {stack.map(({ icon, label }) => (
-                <li className="flex items-center gap-2 text-xs text-muted-foreground" key={label}>
-                  <span
-                    aria-hidden="true"
-                    className="size-4 shrink-0 bg-secondary-foreground/80"
-                    style={{
-                      mask: `url(${icon}) center / contain no-repeat`,
-                      WebkitMask: `url(${icon}) center / contain no-repeat`,
-                    }}
-                  />
+                <li className="flex items-center gap-2" key={label}>
+                  <MaskedIcon src={icon} />
                   {label}
                 </li>
               ))}
@@ -73,8 +64,8 @@ export default function SystemSection({
 function TextList({ title, items }: { title: string; items: string[] }) {
   return (
     <div>
-      <p className="text-sm font-medium text-secondary-foreground">{title}</p>
-      <ul className="mt-3 w-full list-disc space-y-2 pl-5 text-[15px] leading-7 text-foreground/70">
+      <h4>{title}</h4>
+      <ul className="mt-3 list-disc space-y-2 pl-5">
         {items.map((item) => (
           <li key={item}>{item}</li>
         ))}

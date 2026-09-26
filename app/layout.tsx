@@ -102,11 +102,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html className={`${plexSans.variable} ${plexSerif.variable} ${plexMono.variable}`} lang="en">
       <body>
         <script
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
           type="application/ld+json"
         />
         <Header />
-        {children}
+        <div className="px-3 sm:px-5">
+          <div className="mx-auto w-full max-w-7xl">{children}</div>
+        </div>
       </body>
     </html>
   );

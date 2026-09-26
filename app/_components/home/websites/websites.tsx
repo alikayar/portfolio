@@ -1,9 +1,10 @@
-import WebsiteSection, { type WebsiteProject } from "@/components/websites/website-section";
+import WebsiteSection, {
+  type WebsiteProject,
+} from "@/app/_components/home/sections/website-section";
 import { assetUrl } from "@/config/environment";
 
 const projects: WebsiteProject[] = [
   {
-    category: "Real estate website",
     description: "A multilingual website for a residential development in Podgorica, Montenegro.",
     href: "https://ckgroupinvestment.com/en",
     image: assetUrl("/images/public-work/ck-group-investment-website.webp"),
@@ -15,7 +16,6 @@ const projects: WebsiteProject[] = [
     title: "CK Group Investment",
   },
   {
-    category: "Insurance website",
     description: "A multilingual insurance website for product discovery and quote capture.",
     href: "https://solarasigorta.com/en",
     image: assetUrl("/images/public-work/solara-insurance-website.webp"),
@@ -32,13 +32,12 @@ const projects: WebsiteProject[] = [
 export default function Websites() {
   return (
     <section
-      className="scroll-mt-[3.25rem] bg-card pb-16 pt-20 text-foreground md:pb-24 md:pt-24"
+      aria-labelledby="websites-heading"
+      className="section-gap scroll-mt-[var(--header-height)] bg-card text-foreground"
       id="websites"
     >
       <header className="mx-auto max-w-xl text-center">
-        <h2 className="font-display text-3xl font-semibold tracking-[-0.035em] text-secondary-foreground sm:text-4xl">
-          Websites
-        </h2>
+        <h2 id="websites-heading">Websites</h2>
       </header>
 
       <div className="mt-12 grid gap-12 md:grid-cols-2 md:gap-10">

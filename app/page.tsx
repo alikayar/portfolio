@@ -1,8 +1,8 @@
-import Contact from "@/components/contact";
 import type { Metadata } from "next";
-import Hero from "@/components/hero";
-import SelectedWork from "@/components/systems/selected-work";
-import Websites from "@/components/websites/websites";
+import Contact from "@/app/_components/home/contact";
+import Hero from "@/app/_components/home/hero";
+import SelectedWork from "@/app/_components/home/systems/selected-work";
+import Websites from "@/app/_components/home/websites/websites";
 import { assetUrl } from "@/config/environment";
 import { getOpenGraphMetadata } from "@/config/site";
 
@@ -15,13 +15,11 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="px-3 sm:px-5">
-      <div className="mx-auto w-full max-w-7xl">
-        <Hero />
-        <SelectedWork />
-        <Websites />
-        <Contact />
-      </div>
+    <main>
+      <Hero />
+      <SelectedWork />
+      <Websites />
+      <Contact />
     </main>
   );
 }

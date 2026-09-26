@@ -1,7 +1,9 @@
 import "server-only";
 import { parseAssetsOrigin } from "@/config/assets-url";
 
-function requireEnvironmentVariable(name: "ASSETS_URL" | "CONTACT_EMAIL" | "PORTFOLIO_API_URL") {
+type EnvironmentVariable = "ASSETS_URL" | "CONTACT_EMAIL" | "PORTFOLIO_API_URL";
+
+function requireEnvironmentVariable(name: EnvironmentVariable) {
   const value = process.env[name]?.trim();
 
   if (!value) {

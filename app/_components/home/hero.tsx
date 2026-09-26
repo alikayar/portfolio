@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { SkeletonImage } from "@/components/ui/skeleton-image";
+import { MaskedIcon } from "@/components/ui/masked-icon";
 import { assetUrl } from "@/config/environment";
 import { siteConfig } from "@/config/site";
 
@@ -15,46 +17,39 @@ const coreStack = [
 
 export default function Hero() {
   return (
-    <section className="grid min-h-[calc(100svh-3.25rem)] content-center items-start gap-8 overflow-hidden bg-background text-foreground pt-12 md:grid-cols-2 md:gap-12 md:pt-0">
+    <section className="page-top grid items-start gap-8 bg-background text-foreground md:grid-cols-2 md:gap-12">
       <header className="mx-auto w-full max-w-lg text-center md:mx-0 md:text-left">
-        <h1 className="text-balance font-display text-[clamp(1.65rem,3vw,2.75rem)] font-semibold leading-none tracking-[-0.04em] text-secondary-foreground">
-          {siteConfig.role}
-        </h1>
-        <p className="mx-auto mt-6 max-w-sm text-pretty text-base leading-7 text-muted-foreground md:mx-0">
+        <h1>{siteConfig.role}</h1>
+        <p>
           I build websites, full-stack applications, data systems, and automation for complex
           business workflows.
         </p>
-        <div className="mt-4 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm font-medium text-secondary-foreground md:justify-start">
+        <p className="mt-4 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 md:justify-start">
           <span className="inline-flex items-center gap-2">
             <Image
               alt=""
               aria-hidden="true"
               className="h-3 w-[18px] rounded-[2px] object-cover"
               height={20}
-              unoptimized
               src={siteConfig.locationFlag}
+              unoptimized
               width={30}
             />
             {siteConfig.location}
           </span>
-          <span aria-hidden="true">·</span>
-          <span>{siteConfig.availability}</span>
-        </div>
+          <span className="inline-flex items-center gap-2">
+            <span aria-hidden="true">·</span>
+            {siteConfig.availability}
+          </span>
+        </p>
 
         <ul
           aria-label="Core stack"
-          className="mx-auto mt-8 grid max-w-lg grid-cols-2 justify-items-center gap-x-4 gap-y-3 text-xs text-muted-foreground md:mx-0 md:grid-cols-4 md:justify-items-start"
+          className="tech-stack-text mx-auto mt-8 grid max-w-lg grid-cols-[repeat(2,max-content)] justify-between gap-x-4 gap-y-3 md:mx-0 lg:grid-cols-[repeat(4,max-content)] lg:justify-start"
         >
           {coreStack.map(({ icon, label }) => (
             <li className="flex items-center gap-2" key={label}>
-              <span
-                aria-hidden
-                className="size-4 shrink-0 bg-secondary-foreground/80"
-                style={{
-                  mask: `url(${icon}) center / contain no-repeat`,
-                  WebkitMask: `url(${icon}) center / contain no-repeat`,
-                }}
-              />
+              <MaskedIcon src={icon} />
               {label}
             </li>
           ))}
@@ -62,14 +57,15 @@ export default function Hero() {
       </header>
 
       <div className="flex items-center justify-center md:justify-end">
-        <Image
+        <SkeletonImage
           alt={`Portrait of ${siteConfig.name}`}
-          className="aspect-[1238/1096] w-full max-w-lg rounded-3xl object-cover"
+          className="aspect-[1238/1096] w-full object-cover"
           height={1096}
           priority
-          sizes="(min-width: 768px) 48vw, 90vw"
+          sizes="(min-width: 1024px) 32rem, (min-width: 768px) 45vw, 90vw"
           src={assetUrl("/images/profile-hero.webp")}
           width={1238}
+          wrapperClassName="w-full max-w-lg overflow-hidden rounded-3xl"
         />
       </div>
     </section>

@@ -1,5 +1,5 @@
-import Image from "next/image";
-import SystemSection from "@/components/systems/system-section";
+import SystemDiagram from "@/app/_components/home/systems/system-diagram";
+import SystemSection from "@/app/_components/home/sections/system-section";
 
 const stack = [
   { icon: "/icons/typescript.svg", label: "TypeScript" },
@@ -12,17 +12,12 @@ export default function SupplierCatalog() {
   return (
     <SystemSection
       diagram={
-        <figure className="relative h-[400px] w-full overflow-hidden bg-transparent sm:h-[500px] lg:h-[680px]">
-          <figcaption className="sr-only">Supplier catalog system flow</figcaption>
-          <Image
-            alt=""
-            aria-hidden
-            className="object-contain object-center lg:object-right"
-            fill
-            src="/diagrams/supplier-catalog.svg"
-            sizes="(min-width: 1024px) 65vw, 100vw"
-          />
-        </figure>
+        <SystemDiagram
+          description="Supplier catalog system flow"
+          height={1006}
+          src="/diagrams/supplier-catalog.svg"
+          width={1039}
+        />
       }
       impactItems={[
         { value: "10×", label: "Higher processing throughput" },

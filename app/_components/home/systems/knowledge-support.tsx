@@ -1,5 +1,5 @@
-import Image from "next/image";
-import SystemSection from "@/components/systems/system-section";
+import SystemDiagram from "@/app/_components/home/systems/system-diagram";
+import SystemSection from "@/app/_components/home/sections/system-section";
 
 const stack = [
   { icon: "/icons/openai.svg", label: "OpenAI" },
@@ -14,17 +14,12 @@ export default function KnowledgeSupport() {
   return (
     <SystemSection
       diagram={
-        <figure className="relative h-[400px] w-full overflow-hidden bg-transparent sm:h-[500px] lg:h-[680px]">
-          <figcaption className="sr-only">Knowledge support system flow</figcaption>
-          <Image
-            alt=""
-            aria-hidden
-            className="object-contain object-center lg:object-right"
-            fill
-            src="/diagrams/knowledge-support.svg"
-            sizes="(min-width: 1024px) 65vw, 100vw"
-          />
-        </figure>
+        <SystemDiagram
+          description="Knowledge support system flow"
+          height={1212}
+          src="/diagrams/knowledge-support.svg"
+          width={707}
+        />
       }
       impactItems={[
         {

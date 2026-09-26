@@ -5,6 +5,8 @@ const assetsOrigin = parseAssetsOrigin(process.env.ASSETS_URL);
 
 const nextConfig: NextConfig = {
   agentRules: false,
+  cacheComponents: true,
+  partialPrefetching: true,
   output: "standalone",
   images: {
     qualities: [75, 85],
